@@ -8,7 +8,7 @@ install python first!
 sudo apt update
 sudo apt install python3
 
-On Red Hat-based distributions (e.g., Fedora), use dnf:
+On Red Hat-based distributions (e.g., Fedora),use dnf:
 sudo dnf install python3
 
 # Then install PyQt5
