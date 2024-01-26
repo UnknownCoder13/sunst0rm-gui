@@ -113,16 +113,12 @@ class SunstormGUI(QMainWindow):
         self.restore_radio.toggled.connect(self.toggleIdentifier)
 
     def browseIPSW(self):
-        options = QFileDialog.Options()
-        file_dialog = QFileDialog()
-        ipsw_path, _ = file_dialog.getOpenFileName(self, "Select IPSW File", "", "IPSW Files (*.ipsw);;All Files (*)", options=options)
+        ipsw_path, _ = QFileDialog.getOpenFileName(self, "Select IPSW File", "", "IPSW Files (*.ipsw);;All Files (*)")
         if ipsw_path:
             self.ipsw_path.setText(ipsw_path)
 
     def browseBlob(self):
-        options = QFileDialog.Options()
-        file_dialog = QFileDialog()
-        blob_path, _ = file_dialog.getOpenFileName(self, "Select Blob File", "", "Blob Files (*.shsh);;All Files (*)", options=options)
+        blob_path, _ = QFileDialog.getOpenFileName(self, "Select Blob File", "", "Blob Files (*.shsh);;All Files (*)")
         if blob_path:
             self.blob_path.setText(blob_path)
 
@@ -140,9 +136,10 @@ class SunstormGUI(QMainWindow):
         command = ""
 
         if self.restore_radio.isChecked():
-            command = f"sudo python3 sunstorm.py -i {ipsw_path} -t {blob_path} -r -d {boardconfig} {kpp_option} {skip_baseband_option} {legacy_option}"
+            command = f"sudo python3 sunstorm.py -i \"{ipsw_path}\" -t \"{blob_path}\" -r -d \"{boardconfig}\" {kpp_option} {skip_baseband_option} {legacy_option}"
         elif self.boot_radio.isChecked():
-            command = f"sudo python3 sunstorm.py -i {ipsw_path} -t {blob_path} -b -d {boardconfig} -id {self.identifier.text()} {kpp_option} {skip_baseband_option} {legacy_option}"
+            identifier = self.identifier.text()
+            command = f"sudo python3 sunstorm.py -i \"{ipsw_path}\" -t \"{blob_path}\" -b -d \"{boardconfig}\" -id \"{identifier}\" {kpp_option} {skip_baseband_option} {legacy_option}"
 
         try:
             result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
@@ -166,4 +163,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
