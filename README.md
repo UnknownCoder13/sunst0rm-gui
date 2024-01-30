@@ -4,7 +4,7 @@ A GUI based iOS Tether Downgrader
 
 # Dependencies Installation for linux
 Use the dependencies script
-enter the dependencies directory
+enter the dependencies directory then
 make it executable(give permissons) - *chmod +x install.sh*
 NOW execute the dependencies script- 
 *sudo ./install.sh*
