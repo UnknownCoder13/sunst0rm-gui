@@ -12,7 +12,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     exit
 fi
 
-echo "macOS detected"
+echo "macOS detected, Getting ready!"
 
 # Install Homebrew if it's not installed
 if ! command -v brew &>/dev/null; then
