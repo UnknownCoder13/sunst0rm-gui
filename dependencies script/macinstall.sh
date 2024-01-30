@@ -35,7 +35,5 @@ fi
 # Install additional Python packages
 pip3 install pyimg4
 
-# Additional steps go here (if any)
-
 echo "Requirements installed successfully!"
 echo "Made by UnknownCoder13 with love :)"
