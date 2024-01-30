@@ -27,7 +27,7 @@ brew update
 brew install python3 git curl clang libimobiledevice usbmuxd
 pip3 install pyqt5
 
-# If you have a requirements.txt file for Python packages
+# install requirements!
 if [[ -f "requirements.txt" ]]; then
     pip3 install -r requirements.txt
 fi
