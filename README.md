@@ -1,25 +1,21 @@
 # Sunstorm-gui
-A GUI based iOS Tether Downgrader 
+A GUI based iOS Tether Downgrader
 
 
-# Process for linux
-install python first!
+# Dependencies Installation for linux
+Use the dependencies script
+enter the dependencies directory
+make it executable(give permissons) - chmod +x install.sh
+NOW execute the dependencies script- sudo ./install.sh
 
-sudo apt update
-sudo apt install python3
+# Dependencies Installation For MacOS
+cd into the directory of dependencies
+use this command- chmod +x macinstall.sh
+then execute the script- sudo ./macinstall.sh
 
-On Red Hat-based distributions (e.g., Fedora),use dnf:
-sudo dnf install python3
-
-# Then install PyQt5
-sudo apt install python3-pyqt5
-
-On Red Hat-based distributions,use
-sudo dnf install python3-qt5
-
-# Run GUI
+# Run GUI (please make sure that you first use the dependencies script!)
 sudo python3 gui.py
 
 
-# Made with love :)
-By Unknown
+# Made with love 
+By Unknown :)
